@@ -27,7 +27,7 @@ This module needs to alter the existing Drupal "Site Information" form. Specific
 
 ## Example URL
 
-http://localhost/data/{api-key}/{node-id}
+http://localhost/data/{api-key}/{content-type}/{node-id}
 
 
 INSTALLATION
