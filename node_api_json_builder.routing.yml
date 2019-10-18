@@ -1,5 +1,5 @@
 node_api_json_builder.page_jason:
-  path: '/data/{siteapikey}/{node}'
+  path: '/data/{siteapikey}/{node_type}/{node}'
   defaults:
     _controller: '\Drupal\node_api_json_builder\Controller\SiteApiKeyController::pageJson'
   requirements:
