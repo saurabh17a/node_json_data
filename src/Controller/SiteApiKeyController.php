@@ -33,14 +33,13 @@ class SiteApiKeyController extends ControllerBase {
    * @param Drupal\node\NodeInterface $node.
    */
   public function checkAccess($siteapikey, NodeInterface $node) {
-	  
+  $node_type = \Drupal::entityManager()->getStorage('node_type')->load($node->getType())->get('name');  
 	$systemConfigObject = \Drupal::configFactory()->getEditable('system.site');
 	$storedSiteKey = $systemConfigObject->get('siteapikey');
-	if (($node->getType() == 'page') && $storedSiteKey) {
       if ($storedSiteKey == $siteapikey) {
 	    return AccessResult::allowed();
 	  }
-	}
+
     return AccessResult::forbidden();
   }
 
